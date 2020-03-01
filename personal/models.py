@@ -36,3 +36,15 @@ class Location(models.Model):
     
     def __str__(self):
         return self.location
+
+class Categories(models.Model):
+    categories = models.CharField(max_length=20)
+
+    def save_categories(self):
+        return self.save()
+        
+    def delete_categories(self):
+        return self.delete()
+
+    def __str__(self):
+        return self.categories
