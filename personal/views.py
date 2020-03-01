@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Image,Categories,Location
-from django.http import HttpResponse
+from django.views.generic import TemplateView, ListView
 
 
 # Create your views here.

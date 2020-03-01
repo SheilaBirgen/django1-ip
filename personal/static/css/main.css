@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway";
+}
+
+/* Header styles */
+header {
+  background: linear-gradient(
+      rgba(247, 209, 200, 0.7),
+      rgba(247, 209, 200, 0.7)
+    ),
+}
+
+/* Nav bar styles */
+nav {
+  background: #f7d1c8;
+}
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.5% 0;
+}
+
+.nav-bar p {
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: #801700;
+}
+
+/* Header text */
+.sub {
+  display: block;
+}
+
+.header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70vh;
+  text-align: center;
+  color: #801700;
+}
+
+/* Search Form */
+form {
+  width: 60%;
+}
+input[type="text"] {
+  padding: 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #801700;
+  display: block;
+  width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+input[type="submit"] {
+  padding: 0.3rem 2rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  background: transparent;
+  color: #801700;
+  font-weight: bolder;
+  border: 1px solid #801700;
+}
+
+
+/* Images Styles */
+.display {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* width: 80%; */
+  margin: 0 auto;
+  
+}
+#images {
+  display: block;
+  padding: 1rem;
+  border: 5px solid #fff;
+  border-radius: 5px;
+  box-shadow: -1px 1px 10px #d3d3d3;
+  margin: 1rem;
+}
+
+.modal-dialog {
+  width: 600px;
+}
