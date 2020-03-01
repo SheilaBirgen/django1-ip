@@ -23,3 +23,16 @@ class Image(models.Model):
   
     def delete_image(self):
         return self.delete()
+
+class Location(models.Model):
+    location = models.CharField(max_length=20)
+
+    def save_location(self):
+        return self.save()
+
+    def delete_location(self):
+        return self.delete()
+
+    
+    def __str__(self):
+        return self.location
