@@ -31,7 +31,6 @@ It contains a search button where one can search for their favourite images
 - Pillow==7.0.0
 - psycopg2==2.8.4
 - python-decouple==3.3
-- pytz==2019.3
 - whitenoise==5.0.1
 
 ## Known Bugs
@@ -41,6 +40,8 @@ There are no known bugs at the moment
 You can reach out to me through the github account SheilaBirgen
 or on my email as jeronobergen@gmail.com
 
+## CodeBeat badge
+
 ## License
-|@2019 Sheila Birgen |
+@2019 Sheila Birgen 
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
