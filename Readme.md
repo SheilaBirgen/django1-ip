@@ -33,3 +33,8 @@ It contains a search button where one can search for their favourite images
 - python-decouple==3.3
 - pytz==2019.3
 - whitenoise==5.0.1
+
+
+## License
+|@2019 Sheila Birgen |
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
