@@ -1,5 +1,5 @@
 {% extends "landing/base.html" %}
-
+{% load static %}
 {% block content %}
 <div class="container content">
   <div class="row">
@@ -12,6 +12,7 @@
     </div>
     </div>
     <div class="row">
+    
       {% if images %}
           {% for image in images %}
           <div class="col-md-4">

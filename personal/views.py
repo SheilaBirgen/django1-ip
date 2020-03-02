@@ -5,10 +5,10 @@ from django.views.generic import TemplateView, ListView
 
 # Create your views here.
 def index(request):
+
   images = Image.objects.all()
-  categories = Categories.objects.all()
-  location_results = Location.objects.all()
-  return render(request,'landing/index.html',{'images':images, 'categories':categories, 'location_results':location_results})
+
+  return render(request,'index.html',{'images':images})
 
 def search_results(request):
     '''
@@ -22,7 +22,7 @@ def search_results(request):
         return render(request, 'search.html', {"message":message, "images":searched_images})
     else:
         message = "You haven't searched for any term"
-        return render(request, 'search_results.html', {"message":message})
+        return render(request, 'landing/search_results.html', {"message":message})
       
 def category(request, id):
     '''

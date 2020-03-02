@@ -16,12 +16,16 @@
     <header>
         {% include "navbar.html" %}
         <div class="header-content">
-        <h1>Your favourite place of getting high resolution pics </h1>
-        <form action="{% url 'search_results' %}" role="search">
-          <input type="text" placeholder="Enter your search item">
-          <input type="submit" value="Search">
-        </form>
-      </div>
+          <h1>Your favourite place of getting high resolution pics </h1>
+          <form action="{% url 'search_results' %}" role="search">
+            <input type="text" placeholder="Enter your search item">
+            <input type="submit" value="Search">
+          </form>
+        </div>
+
+        {% block content %} {%endblock%}
+
+
     </header>
    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

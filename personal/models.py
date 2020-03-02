@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 class Image(models.Model):
-    image = models.ImageField()
     title = models.CharField(max_length=20, blank=True)
+    image = models.ImageField(upload_to='images/')
     description = models.TextField()
     location = models.ForeignKey("Location", on_delete=models.CASCADE)
     categories = models.ForeignKey("Categories", on_delete=models.CASCADE)
@@ -11,7 +11,7 @@ class Image(models.Model):
     @classmethod
     def search_by_category(cls, search_term):
         '''
-             Method to filter images by category
+        Method to filter images by category
         '''
         result = cls.objects.filter(categories__icontains=search_term)
         return result
@@ -21,6 +21,21 @@ class Image(models.Model):
   
     def delete_image(self):
         return self.delete()
+
+        
+    @classmethod 
+    def get_all_images(cls):
+        images=cls.objects.all()
+        return images
+
+    
+    @classmethod
+    def get_image_by_id(cls,id):
+        image = cls.objects.filter(id= id).all()
+        return image
+
+    def __str__(self):
+        return self.title
 
 class Location(models.Model):
     location = models.CharField(max_length=20)
