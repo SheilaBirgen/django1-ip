@@ -34,6 +34,12 @@ It contains a search button where one can search for their favourite images
 - pytz==2019.3
 - whitenoise==5.0.1
 
+## Known Bugs
+There are no known bugs at the moment
+
+## Support and contact Details
+You can reach out to me through the github account SheilaBirgen
+or on my email as jeronobergen@gmail.com
 
 ## License
 |@2019 Sheila Birgen |
