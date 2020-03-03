@@ -50,8 +50,6 @@ cloudinary.config(
   api_secret = os.environ.get('API_SECRET'),
   secure = True
 )
-
-
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',

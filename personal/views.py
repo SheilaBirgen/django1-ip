@@ -9,7 +9,7 @@ def index(request):
 
   return render(request,'index.html',{'images':images})
 
-def search_results(request):
+def search_results(request,image_id):
     '''
     Method to search location or category
     '''

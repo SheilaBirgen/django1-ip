@@ -29,10 +29,9 @@
                         <p>{{image.description}}</p>
                         <div class="form-group row">
                             <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 padding-1">
-                                <input type="text" class="form-control w- mx-3" value="{{image.image.url}}"
-                                    id="myInput">
-                                <button class="btn btn-sm btn-outline-info" onclick="myFunction()">Copy</button>
-                            </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary btn_toggle" onclick="copylink(`{{image.image.url}}`)">Copy Image Link</button>
+                                  </div>
                         </div>
                         <button type="button" class="btn btn-sm btn-outline-info" data-dismiss="modal">Close</button>
 
@@ -46,12 +45,15 @@
     </div>
 
     <script>
-        document.getElementById("btncopy").addEventListener("click", function () {
-            var copyText = document.getElementById("mytext");
-            copyText.select();
-            document.execCommand("copy");
-            // alert("Copied to clipboard!");
-        });
-    </script>
+        function copylink(value) {
+          function handler(event){
+              event.clipboardData.setData('text/plain',value);
+              event.preventDefault();
+              document.removeEventListener('copy', handler, true);
+          }
+          document.addEventListener('copy', handler, true);
+          document.execCommand('copy');
+        }
+        </script>
 
     {% endblock %}
