@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import cloudinary
 import django_heroku
 import dj_database_url
 from decouple import config,Csv
@@ -35,6 +36,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 INSTALLED_APPS = [
     'personal',
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +44,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+# cloudinary.config(
+#   cloud_name = os.environ.get('CLOUD_NAME'),
+#   api_key = os.environ.get('API_KEY'),
+#   api_secret = os.environ.get('API_SECRET'),
+#   secure = True
+# )
+
+cloudinary.config(
+  cloud_name = 'dk3od0bot',
+  api_key = '843714146784249',
+  api_secret = 'XVGtwzu47k0WPbbdqpkXCWW91Ck',
+  secure = True
+)
 
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',

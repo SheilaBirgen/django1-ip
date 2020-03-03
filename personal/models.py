@@ -1,9 +1,10 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Image(models.Model):
     title = models.CharField(max_length=20, blank=True)
-    image = models.ImageField(upload_to='images/')
+    image = CloudinaryField('image')
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     location = models.ForeignKey("Location", on_delete=models.CASCADE)
@@ -28,7 +29,7 @@ class Image(models.Model):
     def get_all_images(cls):
         images=cls.objects.all()
         return images
-
+    
     
     @classmethod
     def get_image_by_id(cls,id):

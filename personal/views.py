@@ -2,7 +2,6 @@ from django.shortcuts import render
 from .models import Image,Categories,Location
 from django.views.generic import TemplateView, ListView
 
-
 # Create your views here.
 def index(request):
 
@@ -42,3 +41,4 @@ def category(request, id):
     }
 
     return render(request, 'landing/search_result.html', context)
+
