@@ -44,19 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-# cloudinary.config(
-#   cloud_name = os.environ.get('CLOUD_NAME'),
-#   api_key = os.environ.get('API_KEY'),
-#   api_secret = os.environ.get('API_SECRET'),
-#   secure = True
-# )
-
 cloudinary.config(
-  cloud_name = 'dk3od0bot',
-  api_key = '843714146784249',
-  api_secret = 'XVGtwzu47k0WPbbdqpkXCWW91Ck',
+  cloud_name = os.environ.get('CLOUD_NAME'),
+  api_key = os.environ.get('API_KEY'),
+  api_secret = os.environ.get('API_SECRET'),
   secure = True
 )
+
 
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
