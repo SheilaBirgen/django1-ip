@@ -5,6 +5,7 @@ class Image(models.Model):
     title = models.CharField(max_length=20, blank=True)
     image = models.ImageField(upload_to='images/')
     description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
     location = models.ForeignKey("Location", on_delete=models.CASCADE)
     categories = models.ForeignKey("Categories", on_delete=models.CASCADE)
 

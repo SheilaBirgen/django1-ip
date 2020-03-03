@@ -14,14 +14,21 @@ def search_results(request):
     '''
     Method to search location or category
     '''
-    if 'result' in request.GET and request.GET["result"]:
-        search_term = request.GET.get("result")
-        searched_images = Image.search_by_category(search_term)
-       
-        message = f"{search_term}"
-        return render(request, 'search.html', {"message":message, "images":searched_images})
+    if 'image' in request.GET and request.GET["image"]:
+        search_category = request.GET['image']
+        searched_images = Image.search_images(search_category)
+        message = f'{search_category}'
+
+        context = {
+            'message': message,
+            'images': searched_images,
+        }
+        return render(request, 'search_result.html', context)
     else:
-        message = "You haven't searched for any term"
+        message ='The category does not exist!!'
+        contect={
+            'message':message,
+        }
         return render(request, 'landing/search_results.html', {"message":message})
       
 def category(request, id):
