@@ -20,23 +20,19 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title text-center" id="modaltitle">{{image.title}}</h4><br>
-                        <p>{{image.description}}</p>
 
                     </div>
                     <div class="modal-body text-center">
                         <img src="{{image.image.url}}" alt="" width="100%" height="100%">
                     </div>
                     <div class="modal-footer">
-
+                        <p>{{image.description}}</p>
                         <div class="form-group row">
                             <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 padding-1">
                                 <input type="text" class="form-control w- mx-3" value="{{image.image.url}}"
                                     id="myInput">
                                 <button class="btn btn-sm btn-outline-info" onclick="myFunction()">Copy</button>
                             </div>
-
-
-
                         </div>
                         <button type="button" class="btn btn-sm btn-outline-info" data-dismiss="modal">Close</button>
 

@@ -11,12 +11,18 @@ class Image(models.Model):
     categories = models.ForeignKey("Categories", on_delete=models.CASCADE)
 
     @classmethod
-    def search_by_category(cls, search_term):
+    def search_images(cls, search_category):
         '''
         Method to filter images by category
         '''
-        result = cls.objects.filter(categories__icontains=search_term)
-        return result
+        image = cls.objects.filter(id = image_id).first()
+        return image
+        
+    @classmethod
+    def get_image_by_id(cls, image_id):
+        '''Class method to get a specific image by it's id'''
+        image = cls.objects.filter(id = image_id).first()
+        return image
 
     def save_image(self):
         return self.save()
@@ -29,7 +35,7 @@ class Image(models.Model):
     def get_all_images(cls):
         images=cls.objects.all()
         return images
-    
+
     
     @classmethod
     def get_image_by_id(cls,id):
