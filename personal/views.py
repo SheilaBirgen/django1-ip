@@ -9,27 +9,17 @@ def index(request):
 
   return render(request,'index.html',{'images':images})
 
-def search_results(request,image_id):
-    '''
-    Method to search location or category
-    '''
-    if 'image' in request.GET and request.GET["image"]:
-        search_category = request.GET['image']
-        searched_images = Image.search_images(search_category)
-        message = f'{search_category}'
+def search_results(request):
+    if 'article' in request.GET and request.GET["article"]:
+        search_term = request.GET.get("article")
+        searched_articles = Article.search_by_title(search_term)
+        message = f"{search_term}"
 
-        context = {
-            'message': message,
-            'images': searched_images,
-        }
-        return render(request, 'search_result.html', context)
+        return render(request, 'landing/search.html',{"message":message,"articles": searched_articles})
     else:
-        message ='The category does not exist!!'
-        contect={
-            'message':message,
-        }
-        return render(request, 'landing/search_results.html', {"message":message})
-      
+        message = "You haven't searched for any term"
+        return render(request, 'landing/search.html',{"message":message})
+        
 def category(request, id):
     '''
     method to search images category

@@ -30,29 +30,27 @@ class TestLocation(TestCase):
         locations = Location.objects.all()
         self.assertTrue(len(locations) == 0)
 
-    def test_update_location(self):
-        '''Test case to update a location in database'''
-        self.test_location.save_class()
-        self.test_location.update_class(location = 'Kisumu')
-        self.assertEqual(self.test_location.location, 'Kisumu')
-
 class TestCategories(TestCase):
-    '''Test class to test categories class'''
+    '''
+    Test class to test categories class
+    '''
     def setUp(self):
         '''Function to prepare for every test case'''
-        self.test_categories = Categories(categories= 'landscape')
+        self.food= Categories(categories= 'food')
 
     def tearDown(self):
         '''Function to clean up after every test case'''
         Categories.objects.all().delete()
 
     def test_isinstance(self):
-        '''Test if test_category is an instance of category class'''
-        self.assertTrue(isinstance(self.test_categories, Categories))
+        '''
+        Test if test_category is an instance of category class
+        '''
+        self.assertTrue(isinstance(self.Travel,Categories))
 
     def test_save_categories(self):
         '''Test saving a category to database'''
-        self.test_categories.save_class()
+        self.Food.save_class()
         categories = Category.objects.all()
         self.assertTrue(len(categories) > 0)
 
@@ -62,9 +60,3 @@ class TestCategories(TestCase):
         self.test_categories.delete_class()
         categories = Categories.objects.all()
         self.assertTrue(len(categories) == 0)
-
-    def test_update_categories(self):
-        '''Test case to update a category in database'''
-        self.test_categories.save_class()
-        self.test_categories.update_class(categories = 'adventure')
-        self.assertEqual(self.test_categories.categories, 'adventure')

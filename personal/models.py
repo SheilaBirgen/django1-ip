@@ -29,7 +29,11 @@ class Image(models.Model):
   
     def delete_image(self):
         return self.delete()
-
+    
+    @classmethod
+    def search_by_title(cls,search_term):
+        news = cls.objects.filter(title__icontains=search_term)
+        return news
         
     @classmethod 
     def get_all_images(cls):
